@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback';
+  --font-serif: 'Playfair Display', 'Playfair Display Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+
+  /* Brand colors */
+  --color-gold: #C4813A;
+  --color-dark: #3D3530;
+  --color-cream: #F2EDE4;
+  --color-muted-warm: #B8B0A8;
+  --color-dark-warm: #2A2220;
+
+  /* Semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  --background: #F2EDE4;
+  --foreground: #3D3530;
+  --card: #EDE7DC;
+  --card-foreground: #3D3530;
+  --popover: #F2EDE4;
+  --popover-foreground: #3D3530;
+  --primary: #C4813A;
+  --primary-foreground: #F2EDE4;
+  --secondary: #3D3530;
+  --secondary-foreground: #F2EDE4;
+  --muted: #DDD7CC;
+  --muted-foreground: #7A6F68;
+  --accent: #C4813A;
+  --accent-foreground: #F2EDE4;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #D4CCC2;
+  --input: #D4CCC2;
+  --ring: #C4813A;
+  --radius: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  html {
+    @apply bg-background;
+    scroll-behavior: smooth;
+  }
+}
